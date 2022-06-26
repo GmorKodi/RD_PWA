@@ -56,6 +56,7 @@ const showMagents = () => {
   let output = "";
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer DCM3HCQTBLRLT5CMMML5MVQK2SJKWBZPXUZIHWEKEEAWSYR5MPFQ");
+  myHeaders.append("Access-Control-Allow-Origin", "https://gmorkodi.github.io/RD_PWA/"); 
 
   var requestOptions = {
     method: 'GET',
