@@ -52,7 +52,37 @@ const showCoffees = () => {
   container.innerHTML = output;
 };
 
-document.addEventListener("DOMContentLoaded", showCoffees);
+const showMagents = () => {
+  let output = "";
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer DCM3HCQTBLRLT5CMMML5MVQK2SJKWBZPXUZIHWEKEEAWSYR5MPFQ");
+
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow',
+    mode: 'cors'
+  };
+
+  fetch("https://api.real-debrid.com/rest/1.0/torrents/", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+
+  coffees.forEach(
+    ({ name }) =>
+      (output += `
+              <div class="card">
+                <h1 class="card--title">${name}</h1>
+                <a class="card--link" href="#">Taste</a>
+              </div>
+              `)
+  );
+  container.innerHTML = output;
+};
+
+document.addEventListener("DOMContentLoaded", showMagents);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
