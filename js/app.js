@@ -56,7 +56,7 @@ const showMagents = () => {
   let output = "";
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer DCM3HCQTBLRLT5CMMML5MVQK2SJKWBZPXUZIHWEKEEAWSYR5MPFQ");
-  myHeaders.append("Access-Control-Allow-Origin", "https://gmorkodi.github.io/RD_PWA/"); 
+  myHeaders.append("Access-Control-Allow-Origin", "https://api.real-debrid.com"); 
 
   var requestOptions = {
     method: 'GET',
