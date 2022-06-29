@@ -66,7 +66,8 @@ const showMagents = () => {
   };
 
   fetch("https://api.real-debrid.com/rest/1.0/torrents/", requestOptions)
-    .then(response => response.json())
+//     .then(response => response.json())
+      .then(response => console.log(response))
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
